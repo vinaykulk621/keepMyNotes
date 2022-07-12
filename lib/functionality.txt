@@ -1,0 +1,19 @@
+//Functionality to include in the app
+
+
+--->FireBase login and authentication.
+--->Cool animations.
+--->Anime characters default profile picture.
+--->To do List.
+--->Remainders with customizable notification.
+--->Add pictures to the note.
+--->Add music to some note.
+--->Work on same note with friends/family.
+--->Keep it simple.
+--->Less memory consuming.
+--->Download music to local storage just by searching the name.
+--->Access workout videos by muscles u want to work on.
+--->Record workout efficiency.
+--->Anime/Web-series/K-drama/Movie suggestions.
+--->productivity tracker with cool graphs and all.
+--->Different themes for the app.
