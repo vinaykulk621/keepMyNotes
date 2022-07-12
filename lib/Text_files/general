@@ -1,0 +1,7 @@
+//external packages used till now.
+--->google fonts
+
+
+//Shit i don't understand bit still i used it because it is needed.
+--->creating a global key for the form
+<--final GlobalKey<FormState> _formKey = GlobalKey<FormState>();-->
