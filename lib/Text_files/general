@@ -1,7 +1,30 @@
+-->keytool -list -v -keystore C:\Users\Kulka\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+//SHA-1
+49:2b:74:dd:e9:63:e5:78:1e:51:ed:b1:14:74:62:fa:a2:f2:21:f4
+//SHA-256
+78:dc:07:bc:8b:af:00:24:ac:81:53:4f:3f:66:d0:68:fc:82:ac:dd:85:1c:fc:f2:15:ee:57:3e:07:c9:0c:cd
+
+
 //external packages used till now.
 --->google fonts
+--->firebase_core
+--->firebase_database
+--->provider
+
 
 
 //Shit i don't understand bit still i used it because it is needed.
 --->creating a global key for the form
 <--final GlobalKey<FormState> _formKey = GlobalKey<FormState>();-->
+
+
+//StackOverflow
+    //If you come up with GradleException() error or properties() is not defined error.
+===>StackOverFlow------->https://stackoverflow.com/questions/56938436/first-flutter-app-error-cannot-resolve-symbol-properties
+    //Firebase Database connection was forcefully killed by the server: Different region #flutter
+===>https://stackoverflow.com/questions/69060872/firebase-database-connection-was-forcefully-killed-by-the-server-different-regi
+    //Why is the Firebase Realtime Database's data appearing as null in the console?
+===>https://stackoverflow.com/questions/68025986/why-is-the-firebase-realtime-databases-data-appearing-as-null-in-the-console
+
+
+

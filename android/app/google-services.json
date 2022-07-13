@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "264107590383",
+    "project_id": "keepmynote-88f89",
+    "firebase_url": " https://keepmynote-88f89-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "storage_bucket": "keepmynote-88f89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264107590383:android:0508cc88e07fbf857f911a",
+        "android_client_info": {
+          "package_name": "com.example.keep_my_notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264107590383-vv63ubla2k6argqs5cd2bjke6t7e9knb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.keep_my_notes",
+            "certificate_hash": "492b74dde963e5781e51edb1147462faa2f221f4"
+          }
+        },
+        {
+          "client_id": "264107590383-fcrtpfr4gmiq915db6qv3dbk8sjnvg5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlbYD582nRgl6CoZHhjcaJl9YmiowDhP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264107590383-fcrtpfr4gmiq915db6qv3dbk8sjnvg5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

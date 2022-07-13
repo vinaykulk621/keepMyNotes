@@ -1,14 +1,22 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; //fonts
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);
 
-  //creating a reference to the form i.e creating a form key
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final database = FirebaseDatabase.instance
+      .ref(); //using database as a reference to realtime database
 
   @override
   Widget build(BuildContext context) {
+    //the data is written in the child of the root of the database at the place '/path'
+    final pathRef = database.child('/Users');
+
+    //TextEditingController controllers
+    TextEditingController name = TextEditingController();
+    TextEditingController psw = TextEditingController();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
@@ -16,16 +24,16 @@ class Login extends StatelessWidget {
           //linear gradient background
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            gradient:
-                LinearGradient(begin: Alignment.bottomCenter, stops: const [
-              0.1,
-              0.5,
-              0.5
-            ], colors: [
-              Colors.lightBlueAccent.withOpacity(.74),
-              Colors.lightBlue.withOpacity(.69),
-              Colors.lightBlue.withOpacity(.59)
-            ]),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              stops: const [0.1, 0.2, 0.5, 0.5],
+              colors: [
+                Colors.lightBlueAccent.withOpacity(.84),
+                Colors.lightBlueAccent.withOpacity(.74),
+                Colors.lightBlue.withOpacity(.64),
+                Colors.lightBlue.withOpacity(.44)
+              ],
+            ),
           ),
           child: Scaffold(
             backgroundColor: Colors.white10,
@@ -54,16 +62,19 @@ class Login extends StatelessWidget {
                         children: const [
                           TextSpan(text: 'Keep'),
                           TextSpan(
-                              text: 'My',
-                              style: TextStyle(fontStyle: FontStyle.italic)),
+                            text: 'My',
+                            style: TextStyle(fontStyle: FontStyle.italic),
+                          ),
                           TextSpan(
-                              text: 'Note',
-                              style: TextStyle(color: Colors.black)),
+                            text: 'Note',
+                            style: TextStyle(color: Colors.black),
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
+
                 //Form or inputs or text fields
                 const SizedBox(height: 100.0),
                 Column(
@@ -73,19 +84,25 @@ class Login extends StatelessWidget {
                       child: Column(
                         children: [
                           usernameEmailPassword(
-                              'username',
+                              'Username',
                               const Icon(Icons.person),
-                              'username or E-mail',
+                              'Username or Email-id',
                               false,
-                              30),
-                          usernameEmailPassword('password',
-                              const Icon(Icons.key), 'password', true, 15),
-                          button('Login'),
+                              25,
+                              name),
+                          usernameEmailPassword(
+                              'Password',
+                              const Icon(Icons.lock),
+                              'Password',
+                              true,
+                              12,
+                              psw),
+                          button('login', name, psw, pathRef),
                         ],
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -94,11 +111,13 @@ class Login extends StatelessWidget {
     );
   }
 
-  Widget usernameEmailPassword(
-      String title, Icon icon, String hint, bool obscureText, int len) {
+  //text input field
+  Widget usernameEmailPassword(String title, Icon icon, String hint,
+      bool obscureText, int len, TextEditingController tec) {
     return Column(
       children: [
         TextFormField(
+          controller: tec,
           cursorColor: Colors.black,
           keyboardAppearance: Brightness.light,
           obscureText: obscureText,
@@ -135,15 +154,21 @@ class Login extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 30.0,
-        )
+          height: 25.0,
+        ),
       ],
     );
   }
 
-  Widget button(String title) {
+  //button
+  Widget button(String title, TextEditingController uname,
+      TextEditingController pass, DatabaseReference path) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        path.push().set({'username': uname.text, 'password': pass.text});
+        uname.clear();
+        pass.clear();
+      },
       child: Text(title),
     );
   }
