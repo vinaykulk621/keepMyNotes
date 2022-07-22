@@ -90,7 +90,6 @@ class Login extends StatelessWidget {
                               false,
                               25,
                               name),
-                          Spacer(flex: 2),
                           usernameEmailPassword(
                               'Password',
                               const Icon(Icons.lock),
